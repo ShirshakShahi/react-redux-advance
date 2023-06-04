@@ -8,11 +8,17 @@ import { useSelector } from 'react-redux';
 function App() {
 
   const showCart = useSelector(state => state.ui.cartIsShown);
-  const cartItems = useSelector(state => state.cart.items);
-  useEffect(() => {
+  const cart = useSelector(state => state.cart);
 
-    console.log(cartItems)
-  }, [cartItems])
+  useEffect(() => {
+    fetch('https://redux-cart-41153-default-rtdb.firebaseio.com/cart.json', {
+      method: 'PUT',
+      body: JSON.stringify(cart),
+      headers: {
+        'Content-type': 'application/json'
+      }
+    });
+  }, [cart])
 
   return (
     <Layout>
