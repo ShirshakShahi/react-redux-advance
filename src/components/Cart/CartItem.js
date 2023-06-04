@@ -1,5 +1,4 @@
 import { cartActions } from '../sotre/cart-slice';
-
 import classes from './CartItem.module.css';
 import { useDispatch } from 'react-redux';
 
@@ -13,17 +12,19 @@ const CartItem = (props) => {
 
   const increaseHandler = () => {
     dispatch(cartActions.addItemCart({
-      key: id,
+      key: props.key,
       id,
       title,
-      price,quantity
+      price,
+      quantity
     }));
+
   }
 
 
 
   return (
-    <li className={classes.item}>
+    <li className={classes.item} key={id}>
       <header>
         <h3>{title}</h3>
         <div className={classes.price}>

@@ -13,7 +13,8 @@ const ProductItem = (props) => {
       key:id,
       id,
       title,
-      price
+      price,
+      description
     }));
   }
 

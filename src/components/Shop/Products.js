@@ -16,16 +16,7 @@ const DUMMY_PRODUCTS = [
   }
 ]
 
-const productList = DUMMY_PRODUCTS.map((product) => {
-  return (
-    <ProductItem
-      id={product.key}
-      key={product.key}
-      title={product.title}
-      price={product.price}
-      description={product.description}
-    />)
-});
+// const productList = 
 
 
 const Products = (props) => {
@@ -33,7 +24,7 @@ const Products = (props) => {
     <section className={classes.products}>
       <h2>Buy your favorite products</h2>
       <ul>
-        {productList}
+        {DUMMY_PRODUCTS.map((product) => (<ProductItem id={product.id} key={product.id} title={product.title} price={product.price} description={product.description} />))}
       </ul>
     </section>
   );

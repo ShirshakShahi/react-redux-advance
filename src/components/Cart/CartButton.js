@@ -6,16 +6,16 @@ import { useSelector } from 'react-redux';
 const CartButton = (props) => {
 
   const noOfItems = useSelector((state) => state.cart.totalQuantity);
-  const dipatch = useDispatch();
+  const dispatch = useDispatch();
 
   const toggleHandler = () => {
-    dipatch(uiActions.showCard());
+    dispatch(uiActions.showCard());
   }
 
   return (
     <button className={classes.button} onClick={toggleHandler}>
       <span>My Cart</span>
-      <span className={classes.badge}>{noOfItems}</span>
+      <span className={classes.badge} key={noOfItems}>{noOfItems}</span>
     </button>
   );
 };
