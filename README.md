@@ -7,3 +7,11 @@
 5. Use `createAsyncThunk` for handling asynchronous logic like loading and error states.
 6. Use selectors with `createSelector`  to drive data from the state.
 7. Redux Toolkit integrates well with Redux Dev Tools Extensions for debugging.
+
+## Main takeaways from this project : 
+
+- redux should be async or side effects free
+- learned how to make slices using `createSlice` and their actions.
+- to manage states using redux storing in one store.
+- to play with action.payload.
+- learned that we should separate our actions function.
