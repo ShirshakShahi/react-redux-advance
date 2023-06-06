@@ -1,6 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-const initialUIstate = { cartIsShown: true };
+const initialUIstate = { cartIsShown: true, notification: null };
 
 const uiSlice = createSlice({
     name: 'ui',
@@ -8,6 +8,15 @@ const uiSlice = createSlice({
     reducers: {
         showCard(state) {
             state.cartIsShown = !state.cartIsShown;
+        },
+
+        showNotification(state, action) {
+            state.notification = {
+                status: action.payload.status,
+                title: action.payload.title,
+                message: action.payload.message
+            }
+
         }
     }
 })
